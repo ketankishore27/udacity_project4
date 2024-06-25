@@ -80,3 +80,4 @@ if __name__ == "__main__":
     predictions = model_predictions(X_test, model)
     precision, recall, fbeta = compute_model_metrics(y_test, predictions)
     model_slicing(df)
+    print("Model Training Complete")

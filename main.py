@@ -1,12 +1,8 @@
-"""
-author: Hyacinth Ampadu
-Date:10/03/2022
-"""
-
 from typing import Literal
 from fastapi import FastAPI
 from pydantic import BaseModel
 from joblib import load
+import uvicorn
 
 from pandas.core.frame import DataFrame
 import numpy as np
@@ -117,3 +113,7 @@ async def inferences(user_data: User):
     pred = inference(model_object, X)
     y = lb.inverse_transform(pred)[0]
     return {"prediction": y}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
