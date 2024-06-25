@@ -12,7 +12,7 @@ df = {"age": 32,
     "hoursPerWeek": 40,
     "nativeCountry": "United-States"
     }
-r = requests.post('https://censusdata-f20901b5a76d.herokuapp.com/', json=df)
+r = requests.post('https://censusdata-5416104b4264.herokuapp.com', json=df)
 print(r.json())
 
 assert r.status_code == 200
