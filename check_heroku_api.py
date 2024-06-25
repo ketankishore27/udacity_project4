@@ -1,8 +1,7 @@
 import requests
 
 
-df = {
-    "age": 32,
+df = {"age": 32,
     "workclass": "State-gov",
     "education": "Some-college",
     "maritalStatus": "Married-civ-spouse",
@@ -13,7 +12,8 @@ df = {
     "hoursPerWeek": 40,
     "nativeCountry": "United-States"
     }
-r = requests.post('https://mlops-salaries.herokuapp.com', json=df)
+r = requests.post('https://censusdata-f20901b5a76d.herokuapp.com/', json=df)
+print(r.json())
 
 assert r.status_code == 200
 

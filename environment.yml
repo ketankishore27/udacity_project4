@@ -1,0 +1,14 @@
+name: heroku_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - scikit-learn
+  - dvc
+  - pandas
+  - numpy
+  - pytest
+  - fastapi
+  - uvicorn
+  - git
