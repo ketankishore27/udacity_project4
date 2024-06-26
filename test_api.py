@@ -87,5 +87,5 @@ def test_post_malformed_new(client):
         "native_country": "United-States"
     })
 
-    assert r.status_code == 200
+    assert r.status_code != 200
     assert r.json() == {"Income prediction": "<=50K"}
