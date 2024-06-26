@@ -88,3 +88,6 @@ def test_post_malformed_new(client):
     })
 
     assert r.status_code != 200
+
+
+## More testcases to be added
