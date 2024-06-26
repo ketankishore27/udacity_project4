@@ -88,4 +88,3 @@ def test_post_malformed_new(client):
     })
 
     assert r.status_code != 200
-    assert r.json() == {"Income prediction": "<=50K"}
