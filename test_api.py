@@ -71,3 +71,21 @@ def test_post_malformed(client):
         "nativeCountry": "United-States"
     })
     assert r.status_code != 200
+
+def test_post_malformed_new():
+    """ Test if the request is going to be malformed """
+    r = client.post("/", json={
+        "age": 28,
+        "workclass": "Private",
+        "education": "Some-college",
+        "marital_status": "Divorced",
+        "occupation": "Exec-managerial",
+        "relationship": "Not-in-family",
+        "race": "White",
+        "sex": "Female",
+        "hours_per_week": 40,
+        "native_country": "United-States"
+    })
+
+    assert r.status_code == 200
+    assert r.json() == {"Income prediction": "<=50K"}

@@ -37,3 +37,18 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+
+
+  deploy:
+
+    runs-on: ubuntu-latest
+    needs: [build]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Heroku
+        uses: ketankishore28/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: censusdata
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
