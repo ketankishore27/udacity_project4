@@ -72,7 +72,7 @@ def test_post_malformed(client):
     })
     assert r.status_code != 200
 
-def test_post_malformed_new():
+def test_post_malformed_new(client):
     """ Test if the request is going to be malformed """
     r = client.post("/", json={
         "age": 28,
